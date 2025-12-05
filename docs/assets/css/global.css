@@ -1,287 +1,259 @@
-/* Padronização projeto */
+/* ============================
+   RESET E BASE
+============================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
 }
 
 body {
     min-height: 100vh;
-    background: #4e1313;
+    background: #0f0f0f;
     display: flex;
+    color: #f5f5f5;
 }
+
+/* ============================
+   SIDEBAR MINIMALISTA
+============================= */
 
 .sidebar {
     position: fixed;
-    width: 300px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #e14d4d 0%, #4b0101 100%);
-    padding: 2rem;
+    width: 260px;
+    height: 100vh;
+    background: #0d0d0d;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    border-right: 1px solid #1f1f1f;
 }
 
+.profile {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.profile-status {
+    font-size: 0.9rem;
+    color: #8a8a8a;
+    margin-top: 0.2rem;
+}
+
+/* Informações */
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+.profile-info .icon {
+    width: 18px;
+}
+
+.profile-info .text {
+    font-size: 0.85rem;
+    color: #9a9a9a;
+}
+
+/* ============================
+   MENU
+============================= */
+
+.nav-menu {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.nav-item {
+    margin-bottom: 0.8rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1rem;
+    color: #cfcfcf;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #1c1c1c;
+    color: #fff;
+}
+
+/* ============================
+   SOCIAL
+============================= */
+
+.social-icons {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-link i {
+    font-size: 1.3rem;
+    color: #969696;
+    transition: 0.2s;
+}
+
+.social-link:hover i {
+    color: #fff;
+}
+
+/* ============================
+   CONTEÚDO
+============================= */
+
 .content {
-    margin-left: 300px;
+    margin-left: 260px;
     flex: 1;
-    padding: 20px;
-    max-width: 100vw;
+    padding: 40px;
 }
 
 .page {
     display: none;
 }
 
-.active {
+.page.active {
     display: block;
 }
 
-/* Itens de Perfil */
+/* ============================
+   TIMELINE MINIMALISTA
+============================= */
 
-.profile {
+.timeline {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
+    gap: 2.5rem;
 }
 
-.profile-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+.group-title {
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    border: 3px solidrgb(216, 10, 10);
+    font-weight: 500;
 }
 
-.profile-name {
-    color: #ffffff;
-    font-size: 1.5rem;
+.timeline-item {
+    border-left: 2px solid #1f1f1f;
+    padding-left: 1.5rem;
 }
 
-.profile-status {
-    color: #a0a0a0;
+.timeline-header h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.period {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+}
+
+.description,
+.role,
+.course {
+    color: #cfcfcf;
+    margin: 0.4rem 0;
+    line-height: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ============================
+   PROJETOS
+============================= */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projects-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem;
+}
+
+.project-card {
+    background: #141414;
+    border: 1px solid #1f1f1f;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.project-card:hover {
+    border-color: #e63946;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.project-description {
+    color: #bfbfbf;
+    margin: 0.6rem 0;
     font-size: 0.9rem;
-    margin-bottom: 1rem;
 }
 
-.profile-infos {
+/* Ícones */
+.project-links {
     display: flex;
-    flex-direction: column;
-}
-
-.profile-info {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-}
-
-.text {
-    display: flex;
-    align-items: flex-start;
-    color: #a0a0a0;
-    font-size: 0.9rem;
-}
-
-#age {
-    margin-right: 0.2rem;
-}
-
-.profile-info.birthday i {
-    color: #f7b500;
-}
-
-.profile-info.location i {
-    color: #3b82f6;
-}
-
-.profile-info.email i {
-    color: #ea4335;
-}
-
-.profile-info.discord i {
-    color: #5865F2;
-}
-
-/* Itens de Menu */
-.nav-menu {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex;              
-    justify-content: center;    
-    flex-direction: column;
-    padding: 0;
-}
-
-.nav-item {
-    margin-bottom: 1rem;
-    text-align: center;         
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.nav-link i {
-    color: white;               
-    font-size: 20px;
-    margin-right: 0.8rem;
-}
-
-.nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
-}
-
-.nav-link span {
-    margin-left: 0.8rem;
-    color: #b0b0b0;
-}
-
-.nav-link:hover span {
-    color: #ffffff;
-}
-
-.nav-link:hover i {
-    color: #ffffff;
-}
-
-/* Icons Redes Sociais */
-
-.social-icons {
-    margin-top: auto;
-    display: flex;
-    justify-content: center;
     gap: 1rem;
+    margin-top: 0.7rem;
 }
 
-.social-link i {
-    font-size: 24px;
-    color: white; 
-    transition: color 0.3s ease; 
+.project-links i {
+    font-size: 1.1rem;
+    color: #888;
+    transition: 0.2s;
 }
 
-.social-link:hover i.fa-github {
-    color: #000000; 
+.project-links i:hover {
+    color: #fff;
 }
 
-.social-link:hover i.fa-linkedin {
-    color: #0077b5;
+.project-image,
+.project-gif {
+    max-width: 30px !important;
+    width: 10% !important;
+    height: auto !important;
+    display: block;
+    margin: 12px auto;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
 }
 
-.social-link:hover i.fa-youtube {
-    color: #ff0000; 
-}
-
-.social-link:hover i.fa-x-twitter {
-    color: #1da1f2;
-}
-/* Responsividade para dispositivos móveis */
-@media (max-width: 800px) {
-    /* Sidebar fechada por padrão */
-    .sidebar {
-        position: fixed;
-        width: 250px;
-        height: 100%;
-        background-color: linear-gradient(135deg, #e14d4d 0%, #4b0101 100%);
-        transform: translateX(-100%); /* Sidebar oculta */
-        transition: transform 0.3s ease;
-        z-index: 1
-    }
-
-    /* Navbar fixa com ícone de hamburger */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2rem;
-        z-index: 2; 
-        background: linear-gradient(135deg, #e14d4d 0%, #4b0101 100%);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-
-    .sidebar-toggle {
-        position: absolute;
-        left: 20px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .social-icons {
-        gap: 0.8rem;
-        margin-top: 1rem;
-    }
-
-    .profile-info {
-        font-size: 0.85rem;
-    }
-
-    /* Exibir a sidebar quando estiver aberta */
-    .sidebar.open {
-        transform: translateX(0);
-    }
-
-    /* Esconde o conteúdo da sidebar quando fechada */
-    .content {
-        margin-left: 0; 
-        margin-top: 2rem;
-    }
-
-    /* Exibe o conteúdo com margem quando a sidebar está aberta */
-    .sidebar.open + .content {
-        margin-left: 250px; /* Coloca a margem quando a sidebar está aberta */
-    }
-    
-}
-
-/* Para telas maiores, mantemos a sidebar visível */
-@media (min-width: 801px) {
-    .sidebar {
-        position: fixed;
-        width: 300px;
-        height: 100%;
-        background: linear-gradient(135deg, #e14d4d 0%, #4b0101 100%);
-        transform: translateX(0); /* Sempre visível */
-    }
-
-    .sidebar-toggle {
-        display: none; /* Esconde o botão em telas grandes */
-    }
-
-    /* O conteúdo mantém a margem para a sidebar em telas grandes */
-    .content {
-        margin-left: 300px;
-    }
+.project-gif {
+    margin-top: 6px;
 }
