@@ -1,6 +1,6 @@
 # Portfolio FATEC 5o. DSM
 
-Este é um projeto de portfolio desenvolvido utilizando **HTML**, **CSS**, **jQuery** e **FontAwesome**. O projeto está estruturado em pastas para facilitar a organização de estilos, scripts, imagens, ícones e bibliotecas.
+Este é um projeto de portfolio desenvolvido utilizando **HTML**, **CSS** e **FontAwesome**. O projeto está estruturado em pastas para facilitar a organização de estilos, imagens, ícones e bibliotecas.
 
 ## 📁 Estrutura de Pastas
 
@@ -10,7 +10,6 @@ Este é um projeto de portfolio desenvolvido utilizando **HTML**, **CSS**, **jQu
 ├── 📁 gifs
 ├── 📁 icons
 ├── 📁 images
-📁 js
 📄 index.html
 ```
 ## 🛠️ Tecnologias Utilizadas
